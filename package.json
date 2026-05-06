@@ -1,0 +1,9 @@
+{
+  "name": "harness-react-dream-design",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @harness-react-dream-design/site dev",
+    "build": "pnpm --filter @harness-react-dream-design/ui run build && pnpm --filter @harness-react-dream-design/site run build"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

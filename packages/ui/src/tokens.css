@@ -1,0 +1,32 @@
+/**
+ * 科技紫默认主题 — CSS Variables（V1）
+ * 变量名与取值对齐路线图；组件只消费变量，不硬编码色值。
+ */
+
+[data-theme="default"] {
+  /* 主色 — 科技紫 */
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-primary-active: #5b21b6;
+  --color-primary-bg: rgba(124, 58, 237, 0.08);
+
+  /**
+   * 链接色：与 primary 区分时可用靛紫，提升可辨度；与 primary 统一时更易品牌一致。
+   * 本主题选用 #6366F1，与路线图「可与 primary 同或 #6366F1」一致。
+   */
+  --color-link: #6366f1;
+
+  /* 文本 — 中性灰阶 */
+  --color-text: rgba(0, 0, 0, 0.88);
+  --color-text-secondary: rgba(0, 0, 0, 0.65);
+  --color-text-tertiary: rgba(0, 0, 0, 0.45);
+  --color-text-disabled: rgba(0, 0, 0, 0.25);
+
+  /* 边框与分割 */
+  --color-border: #d9d9d9;
+  --color-border-secondary: #f0f0f0;
+
+  /* 背景 */
+  --color-bg-layout: #f5f5f5;
+  --color-bg-container: #ffffff;
+}
