@@ -13,7 +13,7 @@
 - 对应演示或示例；
 - Props / API 说明（V1 可无独立组件详情页，但变更须在站点可见处或后续文档页体现）。
 
-自 **V2** 起随组件落地详情页时，本条作为 Code Review 必查项。
+自 **V2** 起随组件落地详情页时，本条作为 Code Review 必查项。示例：`Button` 详情路由为 `/components/button`（`packages/site`），其页内 API 表须与 `packages/ui/src/components/Button/Button.types.ts` 保持一致。
 
 ## 依赖方向
 

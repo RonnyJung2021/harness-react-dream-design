@@ -1,0 +1,129 @@
+/**
+ * Button：类名统一 `hrd-button*` 前缀，与 tokens 一并聚合到 dist/index.css。
+ * 仅使用 var(--color-*) 与间距，不写死品牌色值。
+ */
+
+.hrd-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.5715;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease,
+    box-shadow 0.15s ease;
+  user-select: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.hrd-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.hrd-button--block {
+  display: flex;
+  width: 100%;
+}
+
+.hrd-button--sm {
+  height: 24px;
+  padding: 0 7px;
+  font-size: 12px;
+}
+
+.hrd-button--md {
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+}
+
+.hrd-button--lg {
+  height: 40px;
+  padding: 6.4px 15px;
+  font-size: 16px;
+}
+
+.hrd-button--primary {
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.hrd-button--primary:hover:not(:disabled):not(.hrd-button--disabled) {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.hrd-button--primary:active:not(:disabled):not(.hrd-button--disabled) {
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+}
+
+.hrd-button--default {
+  color: var(--color-text);
+  background: var(--color-bg-container);
+  border-color: var(--color-border);
+}
+
+.hrd-button--default:hover:not(:disabled):not(.hrd-button--disabled) {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.hrd-button--dashed {
+  color: var(--color-text);
+  background: var(--color-bg-container);
+  border-style: dashed;
+  border-color: var(--color-border);
+}
+
+.hrd-button--dashed:hover:not(:disabled):not(.hrd-button--disabled) {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.hrd-button--link {
+  height: auto !important;
+  padding: 0;
+  color: var(--color-link);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.hrd-button--link:hover:not(:disabled):not(.hrd-button--disabled) {
+  color: var(--color-primary-hover);
+}
+
+.hrd-button--disabled,
+.hrd-button--loading {
+  cursor: not-allowed;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.hrd-button__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentcolor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: hrd-button-spin 0.65s linear infinite;
+}
+
+@keyframes hrd-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

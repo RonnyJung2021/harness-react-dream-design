@@ -19,7 +19,7 @@ pnpm dev
 pnpm build
 ```
 
-- `pnpm dev`：通过 pnpm workspace `--filter` 启动 `packages/site` 的 Vite 开发服务器（默认 `http://localhost:5173/`）。
+- `pnpm dev`：通过 pnpm workspace `--filter` 启动 `packages/site` 的 Vite 开发服务器（默认 `http://localhost:5173/`）。V2 起可访问 `http://localhost:5173/components/button` 查看 `Button` 文档页。
 - `pnpm build`：先构建 `ui`（tsup 产出 ESM 与类型），再构建 `site`（Vite production）。
 
 等价写法示例：`pnpm --filter @harness-react-dream-design/site dev`。

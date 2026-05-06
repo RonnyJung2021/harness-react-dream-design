@@ -9,10 +9,13 @@
 | 源码入口       | `src/index.ts` |
 | 构建产物       | `dist/index.js`、`dist/index.d.ts`（由 tsup 生成） |
 | 在 workspace 中引用 | `workspace:*` 或 `"@harness-react-dream-design/ui": "workspace:*"` |
+| 样式入口（必选） | `import '@harness-react-dream-design/ui/style.css'`（导出路径见 `package.json` 的 `exports["./style.css"]`） |
 
 **tsconfig**：本包使用包内 `tsconfig.json`，`rootDir` 为 `src`；消费方通过 `exports["."]` 解析类型与 ESM，无需额外 `paths` 别名。
 
 **依赖方向**：`packages/site` 依赖本包；本包不得依赖 `packages/site`。
+
+**ui 包样式方案**：主题与组件样式经 **esbuild `css` loader** 聚合为 `dist/index.css`。组件使用 **`hrd-` 前缀**的类名（见 `src/components/Button/Button.css`），避免与消费方全局类冲突；主题变量仍定义于 `src/tokens.css`，组件只消费 `var(--color-*)`。站点侧壳层可继续使用 CSS Modules；引入组件库时请同时 `import '@harness-react-dream-design/ui/style.css'`（见下表）。
 
 ---
 
@@ -35,3 +38,11 @@
 | `--color-border-secondary` | `#f0f0f0` | 弱边框/分割 |
 | `--color-bg-layout` | `#f5f5f5` | 页面布局底 |
 | `--color-bg-container` | `#ffffff` | 容器背景 |
+
+---
+
+## 已导出组件
+
+| 组件 | 说明 |
+|------|------|
+| `Button` | 通用按钮；`type="primary"` 主按钮背景/边框仅依赖 `--color-primary`、`--color-primary-hover`、`--color-primary-active`（见 `tokens.css`），勿在组件样式中硬编码品牌紫 hex。 |
