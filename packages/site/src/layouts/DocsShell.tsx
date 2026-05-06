@@ -45,7 +45,7 @@ export function DocsShell({ uiVersion }: DocsShellProps) {
           </nav>
         </aside>
 
-        <main className={styles.content}>
+        <main className={styles.content} data-testid="doc-main">
           <Outlet />
         </main>
       </div>

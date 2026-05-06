@@ -5,3 +5,5 @@ dist
 .turbo
 .pnpm-store
 _tmp_*
+test-results/
+playwright-report/

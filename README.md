@@ -24,4 +24,10 @@ pnpm build
 
 等价写法示例：`pnpm --filter @harness-react-dream-design/site dev`。
 
+### Playwright（E2E / 截图基线）
+
+- 首次或升级 `@playwright/test` 后：`pnpm playwright:install`（脚本将浏览器装到 `node_modules/.cache/playwright-browsers`，避免沙箱临时目录下 `__dirlock` ENOENT）。
+- 跑用例：`pnpm test:e2e`（内含 `pnpm build` 并自动 `vite preview`）。
+- 更新截图基线：`pnpm test:e2e:update`。
+
 更多约定见 [CONTRIBUTING.md](./CONTRIBUTING.md)。

@@ -10,7 +10,7 @@ export function ButtonDocPage() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className={docStyles.page}>
+    <div className={docStyles.page} data-testid="doc-page-button">
       <h1 className={styles.title}>Button 按钮</h1>
       <p className={styles.lead}>
         演示来自 <code>@harness-react-dream-design/ui</code> 的公开导出；主按钮 <code>primary</code> 使用主题 Token（

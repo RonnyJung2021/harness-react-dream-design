@@ -3,7 +3,14 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter @harness-react-dream-design/site dev",
-    "build": "pnpm --filter @harness-react-dream-design/ui run build && pnpm --filter @harness-react-dream-design/site run build"
+    "build": "pnpm --filter @harness-react-dream-design/ui run build && pnpm --filter @harness-react-dream-design/site run build",
+    "test:e2e": "pnpm build && playwright test",
+    "test:e2e:update": "pnpm build && playwright test --update-snapshots",
+    "playwright:install": "sh scripts/playwright-install-chromium.sh"
   },
-  "packageManager": "pnpm@9.15.0"
+  "packageManager": "pnpm@9.15.0",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "wait-on": "^8.0.1"
+  }
 }
